@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+CategoryDetail
+{% endblock %}
+
+{% block content %}
+<h3>{{categoryobject.title}}</h3>
+<img src="{{categoryobject.image.url}}" width="250">
+
+{% for news in categoryobject.news_set.all %}
+<li><a href="/news/{{news.id}}/detail/">{{news.title}}</a></li>
+<img src="{{news.image.url}}" width="300">
+{% endfor %}
+
+
+{% endblock %}

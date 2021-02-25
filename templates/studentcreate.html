@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+Student Create
+{% endblock %}
+
+{% block content %}
+<h3>Add Student</h3><hr>
+<form method = "POST" enctype = "multipart/form-data">
+{% csrf_token %} 
+{{form.as_p}}
+<button>Save Student</button>	
+
+</form>
+{% endblock %}

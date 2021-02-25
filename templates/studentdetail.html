@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+StudentDetail
+{% endblock %}
+
+{% block content %}
+<h3>{{studentobject.name}}</h3>
+<a href="{%url 'newsapp:studentupdate'  studentobject.id %}">Update this student</a>
+<a href="{%url 'newsapp:studentdelete'  studentobject.id %}">Delete this student</a>
+<img src="{{studentobject.image.url}}">
+<p>{{studentobject.roll_no}}</p>
+<hr>
+<p>{{studentobject.mobile_no}}</p>
+<p>{{studentobject.email}}</p>
+<p>{{studentobject.program}}</p>
+<p>{{studentobject.cv}}</p>
+<p>{{studentobject.about}}</p>
+
+{% endblock %}

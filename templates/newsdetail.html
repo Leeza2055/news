@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Newsdetail
+{% endblock %}
+
+
+{% block content %}
+<h3>{{newsobject.title}}</h3>
+<a href="{%url 'newsapp:newsupdate'  newsobject.id %}">Update this news</a><br>
+<a href="{%url 'newsapp:newsdelete'  newsobject.id %}">Delete this news</a><br>
+<img src="{{newsobject.image.url}}" width="500">
+<p>{{newsobject.detail}}</p>
+<hr>
+<p>Author:{{newsobject.author}}</p>
+<p>Date:{{newsobject.date}}</p>
+{% endblock %}

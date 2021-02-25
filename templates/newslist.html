@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+NewsList
+{% endblock %}
+
+
+{% block content %}
+<h3>All news</h3><hr>
+{% for news in allnews %}
+<h4><a href="{% url 'newsapp:newsdetail' news.id %}">{{news.title}}</a></h4>
+<p>Author:{{news.author}}</p>
+<img src="{{news.image.url}}" width="500">
+
+<p>{{news.date}}</p>
+
+{% endfor %}
+{% endblock %}
